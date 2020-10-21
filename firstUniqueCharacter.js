@@ -21,22 +21,27 @@
 
 
 const firstUniqChar = function(s) {
+    //  create a hash table to store characters and indices
     let charHash = {}
     for (let i=0; i<s.length; i++) {
+        //  if it's already been added as a property, add the index to the array
         if (charHash.hasOwnProperty(s[i])) {
             charHash[s[i]].push(i)
+            //  if it hasn't been added, make a new array with the index
         } else {
             charHash[s[i]]=[i]
         }
     }
     //  pass through the string again
     for (let i=0; i<s.length; i++) {
+        //  create a variable to reference the key/value
         let value = charHash[s[i]]
         // if the value at that index has a length of 1, return the first index
         if (value.length === 1) {
             return value[0]
         }
     }
+    //  if we didn't find one after exiting the loop, return -1
     return -1
 };
 
