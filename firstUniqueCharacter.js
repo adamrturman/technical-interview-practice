@@ -31,20 +31,18 @@ const firstUniqChar = function(s) {
     }
     //  pass through the string again
     for (let i=0; i<s.length; i++) {
-        // create an empty array to store indexes of singles
-        let arrayOfSingles = []
-        // if the value at that index has a length of 1
-        if (charHash.s[i].length === 1) {
-            //  add that index to the singles array
-            arrayOfSingles.push(i)
+        //  variable to represent each key in the hashtable
+        let value = charHash[s[i]]
+        // if the value at that index has a length of 1, return the first index
+        if (value.length === 1) {
+            return value[0]
         }
-        //  sort the array of singles by value
-        arrayOfSingles.sort()
-        //  return the first, which will be the lowest value, which would be the first single in case multiple single letters are present
-        return arrayOfSingles[0]
     }
-    //  if the loop exits without returning it doesn't exist
+    //  if we don't find a single and exit the loop, return -1
     return -1
 };
 
-console.log(firstUniqChar("adam"))
+console.log(firstUniqChar("adam"))  //  returns 1
+console.log(firstUniqChar("leetcode"))  //  returns 0
+console.log(firstUniqChar("loveleetcode"))  //  returns 2
+console.log(firstUniqChar("aabbcc"))    //  returns -1

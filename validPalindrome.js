@@ -23,10 +23,7 @@ var isPalindrome = function(s) {
 
 const isAPalindrome = isPalindrome('Race car');
 console.log(isAPalindrome);
-//  I'm returning true for any string. I think it is because I'm not successfully adding anything to the container array.
-//  and the reverse of an empty array will always be the same
-//
-//
+
 // Array.prototype.every = function (callback) {
 //     for (let i = 0; i < this.array.length; i++) {
 //         if(!callback(this.array[i], i)) {
