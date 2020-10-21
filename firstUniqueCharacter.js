@@ -31,14 +31,12 @@ const firstUniqChar = function(s) {
     }
     //  pass through the string again
     for (let i=0; i<s.length; i++) {
-        //  variable to represent each key in the hashtable
         let value = charHash[s[i]]
         // if the value at that index has a length of 1, return the first index
         if (value.length === 1) {
             return value[0]
         }
     }
-    //  if we don't find a single and exit the loop, return -1
     return -1
 };
 
@@ -46,3 +44,15 @@ console.log(firstUniqChar("adam"))  //  returns 1
 console.log(firstUniqChar("leetcode"))  //  returns 0
 console.log(firstUniqChar("loveleetcode"))  //  returns 2
 console.log(firstUniqChar("aabbcc"))    //  returns -1
+
+//  This is Andrew's solution! Remember lastIndexOf!
+
+// const firstUniqChar = function(s) {
+//     const a = s.split('');
+//     for (let i = 0; i < a.length; i++) {
+//         if (s.indexOf(a[i]) === s.lastIndexOf(a[i])) {
+//             return i;
+//         }
+//     }
+//     return -1;
+// }
