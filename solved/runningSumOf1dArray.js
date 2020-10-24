@@ -39,7 +39,8 @@
 
 //  After refactoring to use map instead of loop
 const runningSum = function(nums) {
+    //  start the sum at zero
     let sum = 0;
-    const answer = nums.map(element => sum += element);
-    return answer;
+    //  return a new array that takes each element adds it to the new sum
+    return nums.map(element => sum += element);
 };
