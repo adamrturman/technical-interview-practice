@@ -21,17 +21,25 @@
 // Input: nums = [3,1,2,10,1]
 // Output: [3,4,6,16,17]
 
+//  Initial solution before refactoring
+// const runningSum = function(nums) {
+//     //  create container for our answer
+//     let answer = [];
+//     //  create a variable to store the sum as we move through the nums
+//     let sum = 0;
+//     //  loop through the nums
+//     for (let i=0; i<nums.length; i++) {
+//         //  add the new element to the sum
+//         sum += nums[i];
+//         //  push the sum into the answer array
+//         answer.push(sum);
+//     }
+//     return answer;
+// };
+
+//  After refactoring to use map instead of loop
 const runningSum = function(nums) {
-    //  create container for our answer
-    let answer = [];
-    //  create a variable to store the sum as we move through the nums
     let sum = 0;
-    //  loop through the nums
-    for (let i=0; i<nums.length; i++) {
-        //  add the new element to the sum
-        sum += nums[i];
-        //  push the sum into the answer array
-        answer.push(sum);
-    }
+    const answer = nums.map(element => sum += element);
     return answer;
 };
