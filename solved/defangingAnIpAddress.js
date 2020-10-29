@@ -13,10 +13,8 @@ const defangIPaddr = function(address) {
             //  increment i by two to jump past the two inserted items
             i +=2;
         }
-    //  turn the array back into a string
-    const joinedAddress = splitAddress.join('')
-    //  return the string
-    return joinedAddress
+    //  return the array after joining back into a string
+     return splitAddress.join('')
 };
 
 defangIPaddr("1.1.1.1") // returns "1[.]1[.]1[.]1"
