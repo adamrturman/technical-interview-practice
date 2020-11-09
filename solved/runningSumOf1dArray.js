@@ -38,9 +38,21 @@
 // };
 
 //  After refactoring to use map instead of loop
+// const runningSum = function(nums) {
+//     //  start the sum at zero
+//     // let sum = 0;
+//     // //  return a new array that takes each element adds it to the new sum
+//     // return nums.map(element => sum += element);
+
+// };
+
+//  After refactoring to use reduce method
+
 const runningSum = function(nums) {
-    //  start the sum at zero
-    let sum = 0;
-    //  return a new array that takes each element adds it to the new sum
-    return nums.map(element => sum += element);
-};
+    nums.reduce((accumulator, currentValue, currentIndex, array) => array[currentIndex] += accumulator)
+    return nums
+}
+
+
+
+console.log(runningSum([1,2,3,4]))

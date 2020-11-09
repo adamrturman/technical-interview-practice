@@ -1,0 +1,67 @@
+[06/Nov/2020 19:13:22] "OPTIONS /sign-in/ HTTP/1.1" 200 0
+{'email': 'adamrturman12345@gmail.com', 'password': '12345'}
+[06/Nov/2020 19:13:23] "POST /sign-in/ HTTP/1.1" 200 105
+[06/Nov/2020 20:39:00] "OPTIONS /sign-in/ HTTP/1.1" 200 0
+{'email': 'adamrturman12345@gmail.com', 'password': '12345'}
+[06/Nov/2020 20:39:01] "POST /sign-in/ HTTP/1.1" 200 105
+[06/Nov/2020 20:39:15] "OPTIONS /change-password/ HTTP/1.1" 200 0
+Not Found: /change-password/
+[06/Nov/2020 20:39:15] "PATCH /change-password/ HTTP/1.1" 404 3468
+[06/Nov/2020 20:40:11] "OPTIONS /sign-in/ HTTP/1.1" 200 0
+{'email': 'adamrturman12345@gmail.com', 'password': '12345'}
+[06/Nov/2020 20:40:11] "POST /sign-in/ HTTP/1.1" 200 105
+[06/Nov/2020 20:40:24] "OPTIONS /change-password/ HTTP/1.1" 200 0
+Not Found: /change-password/
+[06/Nov/2020 20:40:24] "PATCH /change-password/ HTTP/1.1" 404 3468
+[06/Nov/2020 20:40:44] "OPTIONS /change-password/ HTTP/1.1" 200 0
+Not Found: /change-password/
+[06/Nov/2020 20:40:44] "PATCH /change-password/ HTTP/1.1" 404 3468
+[06/Nov/2020 20:42:06] "OPTIONS /sign-in/ HTTP/1.1" 200 0
+{'email': 'adamrturman12345@gmail.com', 'password': '12345'}
+[06/Nov/2020 20:42:06] "POST /sign-in/ HTTP/1.1" 200 105
+[06/Nov/2020 20:43:07] "OPTIONS /sign-in/ HTTP/1.1" 200 0
+{'email': 'adamrturman12345@gmail.com', 'password': '12345'}
+[06/Nov/2020 20:43:08] "POST /sign-in/ HTTP/1.1" 200 105
+[06/Nov/2020 20:44:16] "OPTIONS /sign-in/ HTTP/1.1" 200 0
+{'email': 'adamrturman12345@gmail.com', 'password': '12345'}
+[06/Nov/2020 20:44:17] "POST /sign-in/ HTTP/1.1" 200 105
+[06/Nov/2020 20:44:32] "OPTIONS /change-password/ HTTP/1.1" 200 0
+Not Found: /change-password/
+[06/Nov/2020 20:44:32] "PATCH /change-password/ HTTP/1.1" 404 3468
+[06/Nov/2020 20:45:44] "OPTIONS /sign-in/ HTTP/1.1" 200 0
+{'email': 'adamrturman12345@gmail.com', 'password': '12345'}
+[06/Nov/2020 20:45:45] "POST /sign-in/ HTTP/1.1" 200 105
+[06/Nov/2020 20:45:53] "OPTIONS /change-password/ HTTP/1.1" 200 0
+Not Found: /change-password/
+[06/Nov/2020 20:45:53] "PATCH /change-password/ HTTP/1.1" 404 3468
+[06/Nov/2020 20:49:32] "OPTIONS /sign-in/ HTTP/1.1" 200 0
+{'email': 'adamrturman12345@gmail.com', 'password': '12345'}
+[06/Nov/2020 20:49:32] "POST /sign-in/ HTTP/1.1" 200 105
+[06/Nov/2020 20:49:43] "OPTIONS /change-pw/ HTTP/1.1" 200 0
+Bad Request: /change-pw/
+[06/Nov/2020 20:49:44] "PATCH /change-pw/ HTTP/1.1" 400 69
+[06/Nov/2020 20:50:41] "OPTIONS /sign-in/ HTTP/1.1" 200 0
+{'email': 'adamrturman12345@gmail.com', 'password': '12345'}
+[06/Nov/2020 20:50:42] "POST /sign-in/ HTTP/1.1" 200 105
+[06/Nov/2020 20:51:13] "OPTIONS /change-pw/ HTTP/1.1" 200 0
+[06/Nov/2020 20:51:14] "PATCH /change-pw/ HTTP/1.1" 204 0
+[06/Nov/2020 20:59:31] "OPTIONS /sign-in/ HTTP/1.1" 200 0
+{'email': 'adamrturman12345@gmail.com', 'password': '54321'}
+[06/Nov/2020 20:59:31] "POST /sign-in/ HTTP/1.1" 200 105
+[06/Nov/2020 20:59:40] "OPTIONS /change-pw/ HTTP/1.1" 200 0
+Unprocessable Entity: /change-pw/
+[06/Nov/2020 20:59:40] "PATCH /change-pw/ HTTP/1.1" 422 24
+[06/Nov/2020 20:59:50] "OPTIONS /change-pw/ HTTP/1.1" 200 0
+[06/Nov/2020 20:59:51] "PATCH /change-pw/ HTTP/1.1" 204 0
+[06/Nov/2020 21:20:14] "OPTIONS /sign-up/ HTTP/1.1" 200 0
+Bad Request: /sign-up/
+[06/Nov/2020 21:20:14] "POST /sign-up/ HTTP/1.1" 400 128
+[06/Nov/2020 21:21:31] "OPTIONS /sign-up/ HTTP/1.1" 200 0
+Bad Request: /sign-up/
+[06/Nov/2020 21:21:31] "POST /sign-up/ HTTP/1.1" 400 128
+[06/Nov/2020 21:21:47] "OPTIONS /sign-up/ HTTP/1.1" 200 0
+Bad Request: /sign-up/
+[06/Nov/2020 21:21:47] "POST /sign-up/ HTTP/1.1" 400 128
+[06/Nov/2020 21:22:02] "OPTIONS /sign-up/ HTTP/1.1" 200 0
+[06/Nov/2020 21:22:02] "POST /sign-up/ HTTP/1.1" 201 54
+[06/Nov/2020 21:22:02] "OPTIONS /sign-in/ HTTP/1.1" 200 0
