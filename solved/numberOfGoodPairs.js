@@ -23,16 +23,41 @@
 // Input: nums = [1,2,3]
 // Output: 0
 
+// const numIdenticalPairs = function(nums) {
+//     let pairs = 0;
+//     for (let i = 0; i< nums.length; i++){
+//         for (let j = 1; j< nums.length; j++) {
+//             if (nums[i] == nums[j] && i <j) {
+//                 pairs++;
+//             }
+//         }
+//     }
+//     return pairs;
+// };
+//
+// console.log(numIdenticalPairs([1,2,3,1,1,3]))
+
+// const numIdenticalPairs = function(nums) {
+//     let pairs = 0;
+//     const numSet = new Set (nums)
+//     console.log(numSet)
+//     nums.forEach((element) => {
+//         let newPair = element * (element -1) /2;
+//         pairs = pairs + newPair;
+//     })
+//     return pairs;
+// };
+
 const numIdenticalPairs = function(nums) {
     let pairs = 0;
-    for (let i = 0; i< nums.length; i++){
-        for (let j = 1; j< nums.length; j++) {
-            if (nums[i] == nums[j] && i <j) {
-                pairs++;
-            }
-        }
-    }
-    return pairs;
-};
+    nums.sort();
+    nums.reduce((accumulator, currentValue, index, array) => {
+        if (currentValue === array[index+1]) {
 
-console.log(numIdenticalPairs([1,2,3,1,1,3]))
+        }
+    }, nums[0])
+    return pairs
+}
+
+
+console.log(numIdenticalPairs([1,1,1,1]))
