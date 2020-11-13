@@ -48,16 +48,42 @@
 //     return pairs;
 // };
 
+// const numIdenticalPairs = function(nums) {
+//     nums.sort()
+//     let finalAccumulator = nums.reduce((accumulator, currentValue, index, array) => {
+//         if (currentValue == array[index+1]) {
+//             accumulator++
+//             return accumulator
+//         } else {
+//             return accumulator
+//         }
+//     })
+//     return finalAccumulator
+// };
+
 const numIdenticalPairs = function(nums) {
+    //  start a count of pairs at zero
     let pairs = 0;
-    nums.reduce((accumulator, currentValue, index, array) => {
-        if (currentValue === array[index]) {
-            pairs++;
+    //  sort the digits
+    nums.sort();
+    //  create a pointer for subtraction
+    let j = 1;
+    //  loop through the nums
+    for (let i=1; i<nums.length; i++) {
+        //  if the element is equal to a previous element
+        if (nums[i] === nums[i - j]) {
+            //  add the value of the pointer to the number of pairs
+            pairs += j;
+            //  increment the pointer to check for additional pairs
+            j++;
+            //  if the elements aren't equal
+        } else {
+            //  reset the pointer to one
+            j =1;
         }
-    }, nums[0])
-    let adjustedPairs = pairs * (pairs-1)/2;
-    return adjustedPairs;
-}
+    }
+    return pairs
+};
 
 
-console.log(numIdenticalPairs([1,1,1,1]))
+console.log(numIdenticalPairs([1,2,3,1,1,3]))
