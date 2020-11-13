@@ -50,13 +50,13 @@
 
 const numIdenticalPairs = function(nums) {
     let pairs = 0;
-    nums.sort();
     nums.reduce((accumulator, currentValue, index, array) => {
-        if (currentValue === array[index+1]) {
-
+        if (currentValue === array[index]) {
+            pairs++;
         }
     }, nums[0])
-    return pairs
+    let adjustedPairs = pairs * (pairs-1)/2;
+    return adjustedPairs;
 }
 
 
