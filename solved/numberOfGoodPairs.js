@@ -86,4 +86,124 @@ const numIdenticalPairs = function(nums) {
 };
 
 
-console.log(numIdenticalPairs([1,2,3,1,1,3]))
+// console.log(numIdenticalPairs([1,2,3,1,1,3]))
+
+//  Given an array of integers nums.
+//  A pair (i,j) is called good if nums[i] == nums[j] and i < j.
+//  Return the number of good pairs.
+//  Example
+//  Input: nums = [1,2,3,1,1,3]
+//  Output: 4
+//  Explanation: There are 4 good pairs (0,3), (0,4), (3,4), (2,5) 0-indexed.
+
+const numIdenticalPairs1 = function(nums) {
+    let pairs = 0;
+    for (let i = 0; i< nums.length; i++){
+        for (let j = 1; j< nums.length; j++) {
+            if (nums[i] === nums[j] && i<j) {
+                pairs++;
+            }
+        }
+    }
+    return pairs;
+};
+
+const numIdenticalPairs2 = function(nums) {
+    nums.sort();
+    let pairs = 0;
+    let j = 1;
+    for (let i=1; i<nums.length; i++) {
+        if (nums[i] === nums[i - j]) {
+            pairs += j;
+            j++;
+        } else {
+            j = 1;
+        }
+    }
+    return pairs
+};
+
+// const numIdenticalPairs3 = function(nums) {
+//     let count = {};
+//     for (let i=0; i<nums.length; i++) {
+//         if (!count.hasOwnProperty(nums[i])) {
+//             count[nums[i]] = 1
+//         } else {
+//             count[nums[i]] += 1
+//         }
+//     }
+//     console.log(count)
+// }
+
+function factorialize(num) {
+    if (num === 0 || num === 1)
+        return 1;
+    for (let i = num - 1; i >= 1; i--) {
+        num *= i;
+    }
+    return num;
+}
+
+const numIdenticalPairs3 = function(nums) {
+    let count = {};
+    for (let i=0; i<nums.length; i++) {
+        if (!count.hasOwnProperty(nums[i])) {
+            count[nums[i]] = 1
+        } else {
+            count[nums[i]] += 1
+        }
+    }
+    const numbersOfRepeats = Object.values(count); // array of frequencies
+    // map that to an array of combination - and turn 1s into 0s
+    // simple reduce of those numbers to a single number
+    let final = numbersOfRepeats.reduce((accumulator, currentValue) => {
+        if (currentValue === 1) {
+            return accumulator;
+        } else {
+            return accumulator + factorialize(currentValue)/(factorialize(currentValue - 2) * 2);
+        }
+    }, 0);
+    return final;
+}
+
+// [7, 7, 7, 7]
+// r = 2
+// n = 4
+//
+// [
+//     4,
+//     3,
+//     1
+// ] => ?
+//
+// 1C2
+// _
+//
+// 1!/(-1)! * 2!
+//
+// 4C2
+// 4 * 3 * 2 * 1 / 2 * 1 * 2 * 1
+// 24/ 4
+// 6
+//
+// 2 1 - r!
+// _ _
+//
+// 4 3 2 1 - 4!
+// _ _ _ _
+//
+// 9 8 7 6
+// _ _ _ _
+//
+// 9 * 8 * 7 * 6 = 9!/5!
+//
+// nPr -> n!/(n - r)!
+// nCr -> n!/(n - r)! * r!
+//
+// 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 *1
+// /
+// 5 * 4 * 3 * 2 * 1
+
+// console.log(numIdenticalPairs1([1,2,3,1,1,3]))  //  returns 4
+// console.log(numIdenticalPairs2([1,2,3,1,1,3]))  //  returns 4
+console.log(numIdenticalPairs3([1,2,3,1,1,3]))  //  
