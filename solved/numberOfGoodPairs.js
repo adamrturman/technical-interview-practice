@@ -153,17 +153,31 @@ const numIdenticalPairs3 = function(nums) {
             count[nums[i]] += 1
         }
     }
-    const numbersOfRepeats = Object.values(count); // array of frequencies
-    // map that to an array of combination - and turn 1s into 0s
-    // simple reduce of those numbers to a single number
-    let final = numbersOfRepeats.reduce((accumulator, currentValue) => {
-        if (currentValue === 1) {
-            return accumulator;
-        } else {
-            return accumulator + factorialize(currentValue)/(factorialize(currentValue - 2) * 2);
-        }
-    }, 0);
-    return final;
+    const numbersOfRepeats = Object.values(count);
+
+    // const adjustedRepeats = numbersOfRepeats.map(function(num) {
+    //     if (num === 1) {
+    //         return 0
+    //     } else {
+    //         return num
+    //     }
+    // })
+
+    const adjustedRepeats = numbersOfRepeats.filter(num => num > 1);
+
+    let final = adjustedRepeats.reduce((accumulator, currentValue) => {
+        return accumulator + (factorialize(currentValue)/(factorialize(currentValue - 2) * 2));
+        }, 0);
+        return final;
+
+    // let final = adjustedRepeats.reduce((accumulator, currentValue) => {
+    //     if (currentValue === 1) {
+    //         return accumulator;
+    //     } else {
+    //         return accumulator + factorialize(currentValue)/(factorialize(currentValue - 2) * 2);
+    //     }
+    // }, 0);
+    // return final;
 }
 
 // [7, 7, 7, 7]
