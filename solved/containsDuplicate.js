@@ -16,6 +16,6 @@ var containsDuplicate = function(nums) {
     return finalAccumulator.doesContainDuplicate
 };
 
-
 const result = containsDuplicate([1, 2, 2, 3, 4]);
 console.log(result);
+

@@ -1,0 +1,17 @@
+
+const findFirstDuplicate = function(nums) {
+    let finalAccumulator = nums.reduce(function (accumulator, currentValue) {
+        if (accumulator.numbersSeenAlready.has(currentValue)) {
+            accumulator.processedNums.push(currentValue)
+        } else {
+            accumulator.numbersSeenAlready.add(currentValue)
+        }
+        return accumulator
+    }, {
+        numbersSeenAlready: new Set(),
+        processedNums: []
+    })
+    return finalAccumulator.processedNums[0]
+};
+
+console.log(findFirstDuplicate([2,1,3,5,3,2]))
