@@ -49,9 +49,15 @@
 //  After refactoring to use reduce method
 
 const runningSum = function(nums) {
-    nums.reduce((accumulator, currentValue, currentIndex, array) => array[currentIndex] += accumulator)
-    return nums
-}
+    return nums.reduce((accumulator, currentValue) => {
+        accumulator.runningSum += currentValue;
+        accumulator.newArray.push(accumulator.runningSum);
+        return accumulator;
+    }, {
+        runningSum: 0,
+        newArray: []
+    }).newArray;
+};
 
 
 
