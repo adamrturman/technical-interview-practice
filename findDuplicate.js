@@ -20,12 +20,11 @@ const findFirstDuplicate = function(nums) {
             accumulator.processedNums.push(currentValue);
         }
         accumulator.numbersSeenAlready.add(currentValue);
-
         return accumulator;
     }, {
         numbersSeenAlready: new Set(),
         processedNums: []
-    })[0];
+    }).processedNums[0];
 };
 
 // const findFirstDuplicate = function(nums) {
