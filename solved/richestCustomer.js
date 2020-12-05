@@ -1,11 +1,23 @@
+//  https://leetcode.com/problems/richest-customer-wealth/
+
+//  You are given an m x n integer grid accounts where accounts[i][j] is
+//  the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank.
+//  Return the wealth that the richest customer has.
+//  A customer's wealth is the amount of money they have in all their bank accounts.
+//  The richest customer is the customer that has the maximum wealth.
+//  Example
+//  Input: accounts = [[1,5],[7,3],[3,5]]
+//  Output: 10
+//  Explanation:
+//  1st customer has wealth = 6
+//  2nd customer has wealth = 10
+//  3rd customer has wealth = 8
+//  The 2nd customer is the richest with a wealth of 10.
+
 const maximumWealth = function(accounts) {
-    //  map the accounts to individual account and reduce each account's elements into a single value
-    //  this will return an array
     const accountTotals = accounts.map(account => account.reduce((acc, current) => acc + current));
-    //  return the largest value from that array
     return Math.max(...accountTotals);
 };
 
-
 console.log(maximumWealth([[1,5],[7,3],[3,5]])) //  returns 10
-console.log(maximumWealth([[1,2,3],[3,2,1]])) //  returns 6
+console.log(maximumWealth([2,8,7],[7,1,3],[1,9,5])) //  returns 17
