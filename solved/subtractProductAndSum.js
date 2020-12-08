@@ -11,8 +11,7 @@
 //  Result = 24 - 9 = 15
 
 const subtractProductAndSum = function(n) {
-    const nString = n.toString();
-    const nArray = nString.split('');
+    const nArray = n.toString().split('');
     const nums = nArray.map(num => parseInt(num));
     const product = nums.reduce((acc, current) => acc * current);
     const sum = nums.reduce((acc, current) => acc + current);
