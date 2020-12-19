@@ -1,5 +1,4 @@
 //  https://leetcode.com/problems/sum-of-all-odd-length-subarrays/
-
 //  Given an array of positive integers arr, calculate the sum of all possible odd-length subarrays.
 //  A subarray is a contiguous subsequence of the array.
 //  Return the sum of all odd-length subarrays of arr.
@@ -18,7 +17,6 @@
 // [2,5,3] = 10
 // [1,4,2,5,3] = 15
 // If we add all these together we get 1 + 4 + 2 + 5 + 3 + 7 + 11 + 10 + 15 = 58
-
 
 const sumOddLengthSubarrays = function(arr) {
     //  declare variables
