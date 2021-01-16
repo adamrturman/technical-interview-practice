@@ -14,25 +14,33 @@
 // Return '00:01:00'.
 
 function timeConversion(s) {
+    //  Initialize variables
     let am
     let pm
     let newHour
+    //  Determine whether time is AM or PM
     if (s.substring(8,10) === 'AM') {
         am = true;
     } else {
         pm = true;
     }
-    const noSuffix = s.replace(/[A-Z]/gm, '')
-    let hour = noSuffix.substring(0,2)
+    //  Remove AM or PM suffix
+    const noSuffix = s.replace(/[A-Z]/gm, '');
+    let hour = noSuffix.substring(0,2);
+    //  Edge case for 12AM hour
     if (am && hour === '12') {
-        newHour = '00'
-        return noSuffix.replace(hour, newHour)
+        newHour = '00';
+        return noSuffix.replace(hour, newHour);
+    //  1AM to 1PM
     } else if (am || pm && hour === '12' ) {
-        return noSuffix
+        return noSuffix;
+    //  1PM to midnight
     } else {
         newHour = parseInt(hour) + 12;
-        return noSuffix.replace(hour, newHour)
+        return noSuffix.replace(hour, newHour);
     }
 }
-console.log(timeConversion('12:45:54PM'))
-console.log(timeConversion('12:01:00AM'))
+console.log(timeConversion('12:45:54PM'))   //  returns '12:45:45'
+console.log(timeConversion('12:01:00AM'))   //  returns '00:01:00'
+console.log(timeConversion('10:01:00AM'))   //  returns '10:01:00'
+console.log(timeConversion('10:01:00PM'))   //  returns '22:01:00'
