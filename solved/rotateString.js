@@ -12,8 +12,8 @@
 // Output: false
 
 const rotateString = function(A, B) {
-    //  edge case if both strings are empty
-    if (A.length === 0 && B.length === 0){
+    //  edge case if both strings are initially equal or empty
+    if (A === B){
         return true;
     }
     const last = A.length -1
