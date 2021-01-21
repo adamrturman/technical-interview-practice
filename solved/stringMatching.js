@@ -19,21 +19,27 @@
 const stringMatching = function(words) {
     let regexContainer = [];
     let answer = [];
+    //  create an array of regexes
     for (let i = 0; i < words.length; i++) {
         let pattern = words[i];
         let regex = new RegExp(pattern)
         regexContainer.push(regex)
     }
+    //  compare the regexes to the words
     for (let i = 0; i < regexContainer.length; i++) {
         for (let j = 0; j < words.length; j++) {
+            //  if the regex matches the word and they aren't the same word, add it to the answer
             if (regexContainer[i].test(words[j]) && words[j].match(regexContainer[i])[0].length !== words[j].length) {
                 answer.push(words[j].match(regexContainer[i]))
             }
         }
     }
+    //  since .match returns an array of single-element arrays, make a new array of just those elements
     const processedAnswers = answer.map((answers) => {
         return answers[0]
     });
+    //  in case the same substring matches multiple words and would appear twice in the answer
+    //  convert it to a set to remove duplicates, then convert it back to an array
     const removeDuplicates = new Set(processedAnswers);
     return Array(...removeDuplicates)
 }
