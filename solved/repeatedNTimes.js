@@ -16,7 +16,7 @@
 
 //  Initial solution
 const repeatedNTimes1 = function(A) {
-    //  build a has to store the elements and their number of occurrences
+    //  build a hash to store the elements and their number of occurrences
     let hash ={};
     for (let i=0; i< A.length; i++) {
         if (hash.hasOwnProperty(A[i])){
@@ -37,7 +37,6 @@ const repeatedNTimes1 = function(A) {
 };
 
 //  Refactored
-
 const repeatedNTimes2 = function(A) {
     //  The answer is any element that occurs more than once!
     let hash ={};
