@@ -11,7 +11,7 @@
 // Input: arr = [1,2]
 // Output: false
 
-const uniqueOccurrences = function(arr) {
+const uniqueOccurrences1 = function(arr) {
     //  build a hash to store elements and frequency of occurrences
     let hash = {};
     for (let i=0; i<arr.length; i++) {
@@ -34,5 +34,26 @@ const uniqueOccurrences = function(arr) {
     return true;
 };
 
-console.log(uniqueOccurrences([-3,0,1,-3,1,1,1,-3,10,0]))   //  returns true
-console.log(uniqueOccurrences([1,3,5,5,32]))    //  returns false
+const uniqueOccurrences2 = function(arr) {
+    //  build the hash
+    let hash = {};
+    for (let i=0; i<arr.length; i++) {
+        if (!hash.hasOwnProperty(arr[i])) {
+            hash[arr[i]] = 1;
+        } else {
+            hash[arr[i]]++;
+        }
+    }
+    //  make an array of the occurrences
+    const occurrences = Object.values(hash);
+    //  convert that array into a set, removing duplicates
+    const processedOccurrences = new Set (occurrences);
+    //  if they have the same number of elements, return true
+    if (occurrences.length === processedOccurrences.size) {
+        return true;
+    }
+    return false;
+};
+
+console.log(uniqueOccurrences1([-3,0,1,-3,1,1,1,-3,10,0]))   //  returns true
+console.log(uniqueOccurrences2([1,3,5,5,32]))    //  returns false
