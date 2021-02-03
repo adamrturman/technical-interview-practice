@@ -12,6 +12,7 @@ const longestPalindrome = function(s) {
         }
         return true;
     }
+    //  loop through the input
     for (let i=0; i<s.length; i++) {
         //  create pointers to check all substrings
         let leftPointer = i;
