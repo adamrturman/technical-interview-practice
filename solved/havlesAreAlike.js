@@ -3,8 +3,8 @@ const halvesAreAlike = function(s) {
     const firstHalf = s.slice(0, s.length/2);
     const secondHalf = s.slice(s.length/2);
 
-    //  use a regex to create an array of vowels
     function vowelCount(string) {
+        //  use a regex to create an array of vowels
         const vowelArray = string.match(/[AEIOUaeiou]/gm)
         //  if we find any vowels, return the length of that array
         if (vowelArray) {
