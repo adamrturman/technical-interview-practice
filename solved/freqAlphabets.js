@@ -26,6 +26,7 @@ const freqAlphabets = function(s) {
             string = string.concat(String.fromCharCode(parseInt(s[i]) + 64))
         }
     }
+
     //  return our string in lowercase letters
     return string.toLowerCase();
 };
