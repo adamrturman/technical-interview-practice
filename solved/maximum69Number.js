@@ -15,7 +15,7 @@
 // Changing the fourth digit results in 9666.
 // The maximum number is 9969.
 
-const maximum69Number  = function(num) {
+const maximum69Number1  = function(num) {
     const arrNum = Array.from(num.toString())
     for (let i=0; i< arrNum.length; i++) {
         let copy = [...arrNum]
@@ -27,8 +27,20 @@ const maximum69Number  = function(num) {
     return num;
 };
 
-console.log(maximum69Number(9669))  //  returns 9969
-console.log(maximum69Number(9999))  //  returns 9999
-console.log(maximum69Number(6996))  //  returns 9996
+
+const maximum69Number2  = function(num) {
+    const arrNum = Array.from(num.toString())
+    for (let i=0; i< arrNum.length; i++) {
+        if (arrNum[i] === '6') {
+            arrNum[i] = '9';
+            return arrNum.join('');
+        }
+    }
+    return num;
+};
+
+console.log(maximum69Number1(9669))  //  returns 9969
+console.log(maximum69Number2(9999))  //  returns 9999
+console.log(maximum69Number1(6996))  //  returns 9996
 
 
