@@ -27,7 +27,6 @@ const average = function(salary) {
             return salary;
         }
     });
-    //  reduce the array to a number and divide by the number of elements
     return middleSortedSalaries.reduce((runningSum, salary) => {
         return runningSum + salary;
     }, 0)/ middleSortedSalaries.length;
